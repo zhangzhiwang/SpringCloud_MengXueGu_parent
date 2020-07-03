@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-cloud-provider #配置工程名
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud_db01
+    username: root
+    password: zzw1234
+    
+server:
+  port: 8090
+  
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.asiainfo.entity
+  mapper-locations:
+  - classpath:mapper/*.xml
