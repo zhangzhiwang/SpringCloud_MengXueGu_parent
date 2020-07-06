@@ -3,12 +3,12 @@ spring:
     name: spring-cloud-provider #配置工程名，注意如果是集群的话工程名都保持一致
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/springcloud_db01
+    url: jdbc:mysql://localhost:3306/springcloud_db03
     username: root
     password: zzw1234
     
 server:
-  port: 8090
+  port: 8092
   
 mybatis:
   configuration:
@@ -24,11 +24,3 @@ eureka:
     service-url:  #eureka客户端和服务端的通信地址
 #      defaultZone: http://localhost:9000/eureka #配置服务端的地址，此为服务端单机版配置
       defaultZone: http://eureka-server-1:9000/eureka,http://eureka-server-2:9001/eureka #配置服务端的地址，此为服务端集群配置
-      
-#定义一个可暴露的endpoint端点，从而可以在页面上通过ip:port/actuator/hystrix.stream访问
-management:
-  endpoints:
-    web:
-      exposure:
-        include:
-        - hystrix.stream

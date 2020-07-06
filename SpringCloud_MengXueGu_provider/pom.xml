@@ -27,10 +27,10 @@
 			<artifactId>SpringCloud_MengXueGu_api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		 <dependency>
-                <groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-web</artifactId>
-         </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
@@ -38,6 +38,21 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- eureka客户端 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>	<!-- 此处引包时一定要注意artifactId要引spring-cloud-starter-netflix-eureka-client，不要引spring-cloud-netflix-eureka-client。引用的时候看好了否则服务注册不上 -->
+		</dependency>
+		<!-- hystrix熔断器 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+		<!-- 被监控的服务添加actuator从而被hysterx dashboard监控 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 	</dependencies>
 </project>

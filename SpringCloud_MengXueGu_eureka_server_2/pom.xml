@@ -6,39 +6,25 @@
 		<artifactId>SpringCloud_MengXueGu_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-
-	<artifactId>SpringCloud_MengXueGu_consumer</artifactId>
-	<name>SpringCloud_MengXueGu_consumer</name>
+	
+	<artifactId>SpringCloud_MengXueGu_eureka_server_2</artifactId>
+	<name>SpringCloud_MengXueGu_eureka_server_2</name>
 	<url>http://maven.apache.org</url>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.asiainfo</groupId>
-			<artifactId>SpringCloud_MengXueGu_api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<!-- 不需要显示引入ribbon的依赖，因为eureka客户端依赖已经依赖了ribbon -->
+		<!-- eureka服务端，作为服务注册中心 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-		<!-- feign是rest http客户端 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 	</dependencies>
 </project>

@@ -1,0 +1,15 @@
+server:
+  port: 9000
+  
+eureka:
+  instance:
+    hostname: eureka-server-1 #eureka实例名称
+  client:   #eureka客户端配置
+    register-with-eureka: false #是否向eureka服务端注册，由于本工程自己就是服务端所以不需要注册自己，其他客户端需要配置为true
+    fetch-registry: false #是否获取服务注册信息，由于本工程就是配置中心，其他客户端向本工程注册/获取服务信息以进行服务的调用，注册中心是管理服务的不需要调用任何客户端的服务，所以不需要获取服务注册信息，其他客户端是需要的
+    service-url:  #eureka客户端和服务端的交互地址，配置的是服务端的地址。如果服务端是单机的话就配置一个地址就可以了，如果是个集群那么这里要配置集群其它所有节点的地址，多个地址之间用逗号分割。
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #单机版配置一个地址即可，由于本工程就是eureka服务端所以配置自己即可
+       defaultZone: http://eureka-server-2:9001/eureka/ #服务端集群配置方法，需要配置其它所有节点的url，url之间用逗号分割
+  server:
+    enable-self-preservation: false #eureka自我保护：当服务端没有收到客户端心跳的时候可能时由于网络的原因而非客户端本身挂掉，如果这个时候将该客户端从服务端移除导致该客户端服务下线是不合适的，因为客户端本身是正常的，这个时候eureka的自我保护机制就起作用了：
+                                    #它不会立即把该客户端的服务下线而是保存到服务器端供其他客户端发现，等网络正常之后恢复正常的通信。自我保护机制默认是开启的。

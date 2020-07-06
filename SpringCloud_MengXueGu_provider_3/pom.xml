@@ -7,8 +7,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>SpringCloud_MengXueGu_consumer</artifactId>
-	<name>SpringCloud_MengXueGu_consumer</name>
+	<artifactId>SpringCloud_MengXueGu_provider_3</artifactId>
+	<packaging>jar</packaging>
+	<name>SpringCloud_MengXueGu_provider</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -30,15 +31,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- 不需要显示引入ribbon的依赖，因为eureka客户端依赖已经依赖了ribbon -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
 		</dependency>
-		<!-- feign是rest http客户端 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- eureka客户端 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>	<!-- 此处引包时一定要注意artifactId要引spring-cloud-starter-netflix-eureka-client，不要引spring-cloud-netflix-eureka-client。引用的时候看好了否则服务注册不上 -->
+		</dependency>
+		<!-- hystrix熔断器 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 		</dependency>
 	</dependencies>
 </project>
