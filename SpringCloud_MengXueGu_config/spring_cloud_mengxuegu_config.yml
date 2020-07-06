@@ -1,0 +1,19 @@
+spring: 
+  profiles: 
+    active: dev
+    
+--- 
+server: 
+  port: 1001
+spring: 
+  application: 
+    name: SpringCloudMengXueGu-dev
+  profiles: dev
+  
+--- 
+server: 
+  port: 1002
+spring: 
+  application: 
+    name: SpringCloudMengXueGu-prod
+  profiles: prod
