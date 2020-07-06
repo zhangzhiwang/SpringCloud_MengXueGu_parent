@@ -54,5 +54,6 @@
 		<module>SpringCloud_MengXueGu_eureka_server</module>
     <module>SpringCloud_MengXueGu_eureka_server_2</module>
     <module>SpringCloud_MengXueGu_hystrix_dashboard</module>
+    <module>SpringCloud_MengXueGu_zuul</module>
   </modules>
 </project>

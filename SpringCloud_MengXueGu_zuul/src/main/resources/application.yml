@@ -1,0 +1,25 @@
+server:
+  port: 7000
+  
+spring:
+  application:
+    name: spring-cloud-zuul
+    
+#zuul也是eureka客户端，也需要注册到eureka服务端以及获取服务注册信息
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server-1:9000/eureka,http://eureka-server-2:9001/eureka
+      
+zuul:
+  routes:   #routes属性是一个map，下面可以配置多个路由
+    product-provider: #路由名称，可以任意起，只要保证在routes下面唯一即可
+      path: /product/** #访问路径
+      service-id: spring-cloud-provider #被转发服务的服务名称（即spring.application.name的值），zuul会从eureka去找该名称从而获得ip和端口号，转发时会变成http://ip:port/product/**
+      strip-prefix: false #是否去掉path的前缀，本例中path的前缀为/product，一般为false。如果为true则会去掉前缀/product，则实际转发路径变为http://ip:port/**
+#    product-provider2: #可以配置多个路由
+#      path: /product2/** 
+#      service-id: spring-cloud-provider2 
+#      strip-prefix: false 
