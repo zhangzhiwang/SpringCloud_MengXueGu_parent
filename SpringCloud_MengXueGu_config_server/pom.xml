@@ -6,30 +6,29 @@
 		<artifactId>SpringCloud_MengXueGu_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	
-	<artifactId>SpringCloud_MengXueGu_eureka_server_2</artifactId>
-	<name>SpringCloud_MengXueGu_eureka_server_2</name>
+
+	<artifactId>SpringCloud_MengXueGu_config_server</artifactId>
+	<name>SpringCloud_MengXueGu_config_server</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- eureka服务端，作为服务注册中心 -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- config客户端 -->
+		<!-- config服务端 -->		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 	</dependencies>
 </project>

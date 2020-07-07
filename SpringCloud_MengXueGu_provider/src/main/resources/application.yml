@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/springcloud_db01
     username: root
     password: zzw1234
-    
+  
 server:
   port: 8090
   

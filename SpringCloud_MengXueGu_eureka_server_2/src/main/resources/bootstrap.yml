@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name: SpringCloud_MengXueGu_eureka_server2_config
+      profile: dev
+      label: master
+      uri:
+      - http://localhost:6000/

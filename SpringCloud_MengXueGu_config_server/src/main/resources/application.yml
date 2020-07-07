@@ -1,0 +1,11 @@
+server:
+  port: 6001
+  
+spring:
+  application:
+    name: springCloudMengXueGu-config-server
+  cloud:
+    config:
+      server: #作为config的服务端，即配置中心
+        git:
+          uri: https://github.com/zhangzhiwang/SpringCloud_MengXueGu_config_repo.git
