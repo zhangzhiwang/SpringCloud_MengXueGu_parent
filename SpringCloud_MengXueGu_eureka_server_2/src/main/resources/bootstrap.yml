@@ -1,8 +1,8 @@
-spring:
-  cloud:
-    config:
-      name: SpringCloud_MengXueGu_eureka_server2_config
-      profile: dev
-      label: master
-      uri:
-      - http://192.168.124.4:6001/
+#spring:
+#  cloud:
+#    config:
+#      name: SpringCloud_MengXueGu_eureka_server2_config
+#      profile: dev
+#      label: master
+#      uri:
+#      - http://192.168.124.4:6001/
